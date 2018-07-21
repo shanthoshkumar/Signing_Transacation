@@ -14,7 +14,7 @@ export class HomeComponent {
   web3 = null;
   private_key = "cd67a2cbe1e4a555f7b6da3ef2fb357dc026943cc5c2bf5b85c48b8348a600d0"
   privateKey = Buffer.from(this.private_key, 'hex');
-  account;balance;
+  account;balance;transaction_count;code_at;
 
   constructor() {
     this.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/Vr1GWcLG0XzcdrZHWMPu'));
@@ -76,6 +76,9 @@ export class HomeComponent {
       this.account = obj["address"];
 
       this.web3.eth.getBalance(this.account).then(bal => this.balance = bal );
+      this.web3.eth.getTransactionCount(this.account).then(tcount => this.transaction_count = tcount);
+      this.web3.eth.getCode("0x44524dfd5d99240c659795cc0466b9d485174c56").then(code_at => this.code_at = code_at)
+
       
     } catch (error) {
       console.log(error);
