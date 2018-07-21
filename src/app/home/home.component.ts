@@ -14,7 +14,7 @@ export class HomeComponent {
   web3 = null;
   private_key = "cd67a2cbe1e4a555f7b6da3ef2fb357dc026943cc5c2bf5b85c48b8348a600d0"
   privateKey = Buffer.from(this.private_key, 'hex');
-  account;balance;transaction_count;code_at;
+  account;balance;transaction_count;code_at;GBTC;
 
   constructor() {
     this.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/Vr1GWcLG0XzcdrZHWMPu'));
@@ -69,7 +69,7 @@ export class HomeComponent {
 
 
     try {
-
+      let meta = this;  
       const obj = this.web3.eth.accounts.privateKeyToAccount("0x"+this.private_key);
       console.log(obj);
       
@@ -78,6 +78,10 @@ export class HomeComponent {
       this.web3.eth.getBalance(this.account).then(bal => this.balance = bal );
       this.web3.eth.getTransactionCount(this.account).then(tcount => this.transaction_count = tcount);
       this.web3.eth.getCode("0x44524dfd5d99240c659795cc0466b9d485174c56").then(code_at => this.code_at = code_at)
+      this.web3.eth.getBlockTransactionCount("latest",function(err,data){
+        meta.GBTC = data; 
+      })
+
 
       
     } catch (error) {
