@@ -10,24 +10,33 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-10">
         <h1>Signing a transaction</h1>
-    
+        <br>
+        <p><b>Here the Private Key used is retrieved from metamask Account</b><p>
+        <br>    
         <h3>Account:<p id="acc">{{ account }}</p></h3>
         <br>
         <h3>Balance:<p id="bal">{{ balance }}</p></h3>
         <br>
         <h3>Code:<p id="code">{{ code_at }}</p></h3>
-        <!-- <br>
-        <h3>Block:<p id="block"></p></h3> -->
+        <br>
+        <h3>Nonce:<p id="block">{{ _nonce }}</p></h3> 
         <br>
         <h3>Latest_Block_Transaction_count:<p id="block_trans_count">{{ GBTC }}</p></h3>
         <br>
+        <h3>Account form PrivateKey:<p id="block_trans_count">{{ account }}</p></h3>
+        <br>
         <h3>Transaction_count:<p id="trans_count">{{ transaction_count }}</p></h3>
         <br>
-        <h3>Estimated_gas:<p id="gas"></p></h3>
+        <h3>Estimated_gas:<p id="gas">{{ estimated_gas }}</p></h3>
+        <br>
+        <h3>Value Before Increment:<p id="block">{{ value_before }}</p></h3> 
+        <br>
+        <h3>Value After Increment:<p id="block">{{ value_after }}</p></h3> 
+        <br>
+
     </div>
 </div>
 </html>
-
 
 
 
