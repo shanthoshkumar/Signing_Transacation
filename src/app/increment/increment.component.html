@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Just a Try</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">     
+      
+            <div class="col-sm-12">
+                
+            </div>  
+          
+            
+               
+        <h1>Just copy and Paste</h1>
+        <h3 style="color:firebrick;">a3c0074742371bfbfa3b2ffae0cac027ab1dcecb49fa0c7ea34f640aa89b3dd4</h3> 
+            <div class="col-sm-12">
+                <h1>&nbsp;&nbsp;&nbsp;Current Count</h1> 
+                  <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Count}}</h1>
+            </div>
+             
+            <div class="col-sm-12"> 
+                           
+                <h1>Increase the Count (+)</h1>
+                  <div class="form-group">
+                    <h2>Paste Your Private Key:</h2>
+                    <br> 
+                    <input type="text" #key class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                     <h2>Enter the value:</h2>
+                      <br>
+                      <input type="text" #i class="form-control">
+                    </div>
+                 
+                  <div>
+                  <button class="btn btn-primary" (click)="update(key.value,i.value)">Update</button>
+                </div>
+               </div> 
+      
+        </div>
+        </div>
+
+</body>
+</html>
+<!-- pragma solidity ^0.4.20;
+contract Testing
+{
+    uint count;
+    address Currentaccount;
+    
+    function increment(uint x)public  returns(bool){
+        
+        count += x;
+        return true;
+    }
+    
+    // function receive(address account)public {
+    //     Currentaccount = account;
+    
+    // }
+       
+    function receive() public {
+        Currentaccount = msg.sender;
+    
+    }
+    
+    function decrement(uint y)public returns(bool){
+        
+        count -=y;
+    }
+    
+    function view_address() public constant returns (address) {
+        return Currentaccount;
+    }
+    
+    function show_count() public constant returns (uint) {
+        return count;
+    }
+} -->
